@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/bootstrap.min.css">
+    </head>
+    <body>
+        <form class="card m-3" action="/" method="post">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="书名" name="q" value="{{ q }}">
+                </div>
+                <button type="submit" class="btn btn-primary">搜索</button>
+            </div>
+        </form>
+        <div id="book">
+			{% for book in result %}
+			<div class="card m-3">
+				<div class="card-body">
+					<h3 class="card-title">{{ book['title'] }}</h3>
+					<p>Extension: {{ book['ext'] }}</p>
+					<a class="btn btn-primary" href="{{ book['dl'] }}">Download</a>
+				</div>
+			</div>
+			{% endfor %}
+        </div>
+    </body>
+</html>
