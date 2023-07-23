@@ -4,7 +4,7 @@ from flask import *
 
 def find(title):
     result = []
-    page = requests.get("http://libgen.rocks/index.php?req=" + title).text
+    page = requests.get("http://libgen.top/index.php?req=" + title).text
     tree = etree.HTML(page)
     title = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/b/text()')
     dl = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/nobr/a[1]/@href')
