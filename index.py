@@ -27,4 +27,3 @@ def index():
         return render_template('index.html')
     elif request.method == 'POST':
         return render_template('search.html', result = find(request.values.get('q')), q = request.values.get('q'))
-
