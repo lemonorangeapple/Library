@@ -1,10 +1,10 @@
-import urllib.request
+import requests
 from lxml import etree
 from flask import *
 
 def find(title):
     result = []
-    page = urllib.request.urlopen("http://libgen.rocks/index.php?req=" + title).read()
+    page = requests.get("http://libgen.rocks/index.php?req=" + title).text
     tree = etree.HTML(page)
     title = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/b/text()')
     dl = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/nobr/a[1]/@href')
