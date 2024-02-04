@@ -1,14 +1,6 @@
 {
-  "builds": [
-    {
-      "src": "index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "index.py"
-    }
-  ]
+    "version": 2,
+    "routes": [
+        {"src": "/(.*)", "dest": "http://zh.annas-archive.org"}
+    ]
 }
