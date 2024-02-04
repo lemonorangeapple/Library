@@ -1,8 +1,6 @@
 import requests
 from lxml import etree
 from flask import *
-from gevent import monkey
-monkey.patch_all()
 
 def find(title):
     result = []
