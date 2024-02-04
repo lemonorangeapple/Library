@@ -8,9 +8,9 @@ def find(title):
     result = []
     for j in range(1, 10):
         try:
-            page = requests.get("http://libgen.top/index.php?req=" + str(title) + "&page=" + j).text
+            page = requests.get("https://libgen.rocks/index.php?req=" + str(title) + "&page=" + j).text
         except:
-            page = requests.get("http://libgen.top/index.php?req=" + str(title)).text
+            page = requests.get("https://libgen.rocks/index.php?req=" + str(title)).text
         tree = etree.HTML(page)
         title = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/b/text()')
         dl = tree.xpath('//*[@id="tablelibgen"]/tbody/tr/td/nobr/a[1]/@href')
